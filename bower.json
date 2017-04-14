@@ -1,0 +1,24 @@
+{
+  "name": "gerpro-api",
+  "description": "Gerpro TEST  Sails application",
+  "main": "app.js",
+  "authors": [
+    "fernandopucci"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-messages": "^1.6.4",
+    "angular-resource": "^1.6.4",
+    "bootstrap": "^3.3.7",
+    "jquery": "2.1.3"
+  }
+}

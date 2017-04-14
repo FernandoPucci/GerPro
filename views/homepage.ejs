@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="mailer">
+
+<head>
+  <% include ../views/partials/header.ejs %>
+</head>
+
+<body ng-controller="mailerController">
+
+  <% include ../views/partials/nav.ejs %>
+
+    <div class="jumbotron text-center">
+      <div class="container">
+
+        <h1>{{app}}</h1>
+      </div>
+    </div>
+    <center>
+      <div style="width: 700px;">
+        <form name="mensagemForm">
+          <div class="row">
+            <div class="col-md-12">
+              <!--ALERTAS-->
+              <span ng-show="mensagemForm.para.$dirty && userForm.para.$invalid">
+              <div ng-messages="mensagemForm.para.$error">
+                <!-- preenchimento-->
+                <div ng-message="required" class="alert alert-danger">
+                  Por favor, preencha o campo 'Para'.
+                </div>
+                <div ng-messages="mensagemForm.para.$error">
+                <div ng-message="required" class="alert alert-danger">
+                  Por favor, preencha o campo 'Para' com um email válido.
+                </div>
+                </div>
+              </div>
+              </span>
+              <span ng-show="mensagemForm.assunto.$dirty && userForm.assunto.$invalid">
+              <div ng-messages="mensagemForm.assunto.$error">
+                <!-- preenchimento-->
+                <div ng-message="required" class="alert alert-danger">
+                  Por favor, preencha o campo 'Assunto'.
+                </div>
+              </div>
+              </span>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-6 inline">
+
+                <input class="form-control" type="email" ng-model="mensagem.para" name="para" required placeholder="Destinatário" />
+                <br/>
+                <input class="form-control" type="text" ng-required="true" ng-model="mensagem.assunto" name="assunto" placeholder="Assunto"
+                />
+                <br/>
+              </div>
+
+              <div class="col-md-6">
+                <input class="form-control" type="text" ng-model="mensagem.msg" name="msg" placeholder="Digite aqui sua mensagem" />
+              </div>
+            </div>
+            <div class="col-md-12">
+              <button class="btn btn-primary btn-block" ng-click="enviarMensagem()">OK</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </center>
+
+
+</body>
+
+</html>
