@@ -1,4 +1,4 @@
-angular.module("mailer").controller("mailerController", function ($scope, $http) {
+angModuleConfig.controller("mailerController",["$scope", "$http", function ($scope, $http) {
 
 	$scope.app = "GerPro Mailer Test";
 
@@ -28,6 +28,6 @@ angular.module("mailer").controller("mailerController", function ($scope, $http)
 		$scope.mensagem = [];
 	};
 
-});
+}]);
 
 

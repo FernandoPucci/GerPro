@@ -22,7 +22,7 @@ var MessageServices = {
 
         var t = send({
             to: _to,
-            subject: _subject,
+            subject: "[GerPro] " + _subject,
             text: _message
         }, function (err, res) {
             sails.log('*Enviando ;;; send(): err:', err, '; res:', res);
