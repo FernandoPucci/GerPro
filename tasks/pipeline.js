@@ -38,9 +38,9 @@ var jsFilesToInject = [
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
-  'js/dist/**/*.js',
-  'js/**/angular.js',
-  'js/**/*.js',
+  //'js/dist/**/*.js',
+  //'js/**/angular.js',
+  //'js/**/*.js',
 
    // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
