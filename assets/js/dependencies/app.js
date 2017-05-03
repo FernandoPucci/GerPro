@@ -1,1 +1,1 @@
-var angModuleConfig = 		angular.module("mailer", ["ngMessages", "ngResource"]);
+var app = angular.module("mailer", ["ngMessages", "ngResource"]);

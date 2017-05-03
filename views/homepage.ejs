@@ -17,26 +17,26 @@
     </div>
     <center>
       <div style="width: 700px;">
-        <form name="mensagemForm">
+        <form name="messageForm">
           <div class="row">
             <div class="col-md-12">
-              <!--ALERTAS-->
-              <span ng-show="mensagemForm.para.$dirty && userForm.para.$invalid">
-              <div ng-messages="mensagemForm.para.$error">
-                <!-- preenchimento-->
+              <!--ALERTS-->
+              <span ng-show="messageForm.txtTo.$dirty && userForm.txtTo.$invalid">
+              <div ng-messages="messageForm.txtTo.$error">
+                <!-- FULLFILLING ALERT -->
                 <div ng-message="required" class="alert alert-danger">
                   Por favor, preencha o campo 'Para'.
                 </div>
-                <div ng-messages="mensagemForm.para.$error">
+                <div ng-messages="messageForm.txtTo.$error">
                 <div ng-message="required" class="alert alert-danger">
                   Por favor, preencha o campo 'Para' com um email válido.
                 </div>
                 </div>
               </div>
               </span>
-              <span ng-show="mensagemForm.assunto.$dirty && userForm.assunto.$invalid">
-              <div ng-messages="mensagemForm.assunto.$error">
-                <!-- preenchimento-->
+              <span ng-show="messageForm.txtSubject.$dirty && userForm.txtSubject.$invalid">
+              <div ng-messages="messageForm.txtSubject.$error">
+                <!-- FULLFILLING ALERT -->
                 <div ng-message="required" class="alert alert-danger">
                   Por favor, preencha o campo 'Assunto'.
                 </div>
@@ -50,19 +50,19 @@
             <div class="col-md-12">
               <div class="col-md-6 inline">
 
-                <input class="form-control" type="email" ng-model="mensagem.para" name="para" required placeholder="Destinatário" />
+                <input class="form-control" type="email" ng-model="message.to" name="txtTo" required placeholder="Destinatário" />
                 <br/>
-                <input class="form-control" type="text" ng-required="true" ng-model="mensagem.assunto" name="assunto" placeholder="Assunto"
+                <input class="form-control" type="text" ng-required="true" ng-model="message.subject" name="txtSubject" placeholder="Assunto"
                 />
                 <br/>
               </div>
 
               <div class="col-md-6">
-                <input class="form-control" type="text" ng-model="mensagem.msg" name="msg" placeholder="Digite aqui sua mensagem" />
+                <input class="form-control" type="text" ng-model="message.msg" name="txtMsg" placeholder="Digite aqui sua mensagem" />
               </div>
             </div>
             <div class="col-md-12">
-              <button class="btn btn-primary btn-block" ng-click="enviarMensagem()">OK</button>
+              <button class="btn btn-primary btn-block" ng-click="sendMessage()">OK</button>
             </div>
 
           </div>

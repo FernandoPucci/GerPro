@@ -1,21 +1,15 @@
-angModuleConfig.controller("mailerController",["$scope", "$http", function ($scope, $http) {
+app.controller("mailerController",["$scope", "$http", function ($scope, $http) {
 
 	$scope.app = "GerPro Mailer Test";
 
-	$scope.enviarMensagem = function () {
+	$scope.sendMessage = function () {
 
-		var mens = $scope.mensagem;
-		
-		// console.log("Mensagem");
-		// console.log(mens.para);
-		// console.log(mens.assunto);
-		// console.log(mens.msg);
-		// console.log(mens);
+		var mens = $scope.message;
 	
 		var send = {
-						"to":$scope.mensagem.para,
-						"subject": $scope.mensagem.assunto,
-						"message": $scope.mensagem.msg
+						"to":$scope.message.to,
+						"subject": $scope.message.subject,
+						"message": $scope.message.msg
 					};
 	
 		$http({
@@ -25,7 +19,7 @@ angModuleConfig.controller("mailerController",["$scope", "$http", function ($sco
 			headers: {'Content-Type': 'application/json'}
 		});
 
-		$scope.mensagem = [];
+		$scope.message = [];
 	};
 
 }]);
