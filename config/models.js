@@ -29,6 +29,6 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
   //APENAS PARA DEV
-    migrate: 'alter'
+    migrate: 'safe'
 
 };
