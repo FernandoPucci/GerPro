@@ -1,4 +1,4 @@
-var TestService = {
+var TestServices = {
 
     testFunction: function testService() {
 
@@ -7,4 +7,4 @@ var TestService = {
     }
 };
 
-module.exports = TestService; 
+module.exports = TestServices; 

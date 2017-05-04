@@ -17,7 +17,7 @@ module.exports = {
     //use TestService
     testCall: function (req, res) {
 
-        var testeMsg = TestService.testFunction();
+        var testMsg = TestServices.testFunction();
 
         res.send('Return: ' + testMsg);
 
