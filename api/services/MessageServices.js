@@ -11,7 +11,7 @@ var MessageServices = {
 
         if (!_to || !_subject || !_message) {
 
-            sails.log("Invalid Message: " +
+            sails.log.error("Invalid Message: " +
                 " To: " + _to +
                 " Subject: " + _subject +
                 " Message: " + _message);
@@ -23,7 +23,7 @@ var MessageServices = {
             subject: "[GerPro] " + _subject,
             text: _message
         }, function (err, res) {
-            sails.log('*Sending ;;; send(): err:', err, '; res:', res);
+            sails.log.info('*Sending ;;; send(): err:', err, '; res:', res);
 
             var m = {
                 to: _to,
@@ -34,17 +34,17 @@ var MessageServices = {
             var data;
 
             sails.log.info("*********************");
-            sails.log(m);
-            sails.log(m.to);
-            sails.log(m.subject);
-            sails.log(m.message);
-            sails.log("*********************");
+            sails.log.info(m);
+            sails.log.info(m.to);
+            sails.log.info(m.subject);
+            sails.log.info(m.message);
+            sails.log.info("*********************");
 
             Message.create(m).exec(function (err, _data) {
 
                 if (err) { return res.serverError(err); }
 
-                sails.log('Recorded Message::', _data.id);
+                sails.log.info('Recorded Message::', _data.id);
                 data = _data;
 
             });
