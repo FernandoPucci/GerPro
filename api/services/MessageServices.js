@@ -23,7 +23,7 @@ var MessageServices = {
             subject: "[GerPro] " + _subject,
             text: _message
         }, function (err, res) {
-            sails.log.info('*Sending ;;; send(): err:', err, '; res:', res);
+            sails.log('*Sending ;;; send(): err:', err, '; res:', res);
 
             var m = {
                 to: _to,
@@ -33,18 +33,18 @@ var MessageServices = {
 
             var data;
 
-            sails.log.info("*********************");
-            sails.log.info(m);
-            sails.log.info(m.to);
-            sails.log.info(m.subject);
-            sails.log.info(m.message);
-            sails.log.info("*********************");
+            sails.log("*********************");
+            sails.log(m);
+            sails.log(m.to);
+            sails.log(m.subject);
+            sails.log(m.message);
+            sails.log("*********************");
 
             Message.create(m).exec(function (err, _data) {
 
                 if (err) { return res.serverError(err); }
 
-                sails.log.info('Recorded Message::', _data.id);
+                sails.log('Recorded Message::', _data.id);
                 data = _data;
 
             });
