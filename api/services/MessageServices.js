@@ -11,7 +11,7 @@ var MessageServices = {
 
         if (!_to || !_subject || !_message) {
 
-            sails.log("Inválid Message: " +
+            sails.log("Invalid Message: " +
                 " To: " + _to +
                 " Subject: " + _subject +
                 " Message: " + _message);
