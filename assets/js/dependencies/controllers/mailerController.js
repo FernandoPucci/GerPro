@@ -13,7 +13,7 @@ app.controller("mailerController",["$scope", "$http", function ($scope, $http) {
 					};
 	
 		$http({
-			url: 'message/sendMessage',
+			url: 'api/message/sendMessage',
 			method: 'POST',
 			data: send,
 			headers: {'Content-Type': 'application/json'}
