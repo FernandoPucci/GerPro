@@ -25,7 +25,27 @@ module.exports.policies = {
   * access)                                                                  *
   *                                                                          *
   ***************************************************************************/
+  
 
+
+  //Enable Rest operations fom AuditionsController
+  AuditionsController: {
+    'find': true,
+    'findOne': true,
+    '*': false
+  },
+//Enable Rest operations fom MessageController
+  MessageController: {
+    'sendMessage': true,
+    'callMessages': true,
+    'findOne': true,
+    '*': false
+  },
+  //Enable Rest operations fom TasksController
+  TasksController: {
+    'index': true,
+    '*': false
+  },
   // '*': true,
 
   /***************************************************************************
