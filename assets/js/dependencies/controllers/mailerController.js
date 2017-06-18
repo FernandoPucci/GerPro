@@ -1,6 +1,6 @@
 app.controller("mailerController",["$scope", "$http", function ($scope, $http) {
 
-	$scope.app = "GerPro Mailer Test";
+	$scope.app = "GerPro API Page";
 
 	$scope.sendMessage = function () {
 
