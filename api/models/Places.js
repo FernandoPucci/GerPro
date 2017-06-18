@@ -6,8 +6,42 @@
  */
 
 module.exports = {
-
+  //connection: 'db_server',
+  //configurations to disale UpdateAt and CreatedAt Waterline Columns
+  autoCreatedAt: false,
+  autoUpdatedAt: false,
   attributes: {
+
+    id: {
+      type: 'integer',
+      autoIncrement: true,
+      unique: true,
+      primaryKey: true
+    },
+    company_id: {
+      type: 'integer',
+      required: true
+    },
+    name: {
+      type: 'string',
+      required: true
+    },
+    description: {
+      type: 'text',
+      required: true
+    },
+    created_at: {
+      type: 'datetime',
+      required: true
+    },
+    updated_at: {
+      type: 'datetime',
+      required: true
+    },
+    updated_by_user: {
+      type: 'integer',
+      columnName: 'updated_by_user_id'
+    }
 
   }
 };

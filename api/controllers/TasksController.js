@@ -9,7 +9,7 @@ module.exports = {
     //The REST operations is configured in policies.js
     //If you need create any new methor, enable this on policies.js
     
-    //Same taha 'find()'
+    //Same than 'find()'
     //Info: https://groups.google.com/forum/#!topic/sailsjs/vSQVHeKrGBo
     index: function (req, res) {
         TaskChecks.query("SELECT * FROM TASK_CHECKS", function (err, results) {

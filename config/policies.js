@@ -25,7 +25,7 @@ module.exports.policies = {
   * access)                                                                  *
   *                                                                          *
   ***************************************************************************/
-  
+
 
 
   //Enable Rest operations fom AuditionsController
@@ -34,16 +34,38 @@ module.exports.policies = {
     'findOne': true,
     '*': false
   },
-//Enable Rest operations fom MessageController
+  //Enable Rest operations fom CompaniesController
+  CompaniesController: {
+    'create': true,
+    'findOne': true,
+    'find': true,
+    '*': false
+  },
+  //Enable Rest operations fom MessageController
   MessageController: {
     'sendMessage': true,
     'callMessages': true,
     'findOne': true,
     '*': false
   },
+  //Enable Rest operations fom PlacesController
+  PlacesController: {
+    'create': true,
+    'findOne': true,
+    'find': true,
+    '*': false
+  },
+
   //Enable Rest operations fom TasksController
   TasksController: {
     'index': true,
+    '*': false
+  },
+  //Enable Rest operations fom UsersController
+  UsersController: {
+    'create': true,
+    'findOne': true,
+    'find': true,
     '*': false
   },
   // '*': true,
@@ -54,18 +76,18 @@ module.exports.policies = {
   * and its actions                                                          *
   *                                                                          *
   ***************************************************************************/
-	// RabbitController: {
+  // RabbitController: {
 
-		// Apply the `false` policy as the default for all of RabbitController's actions
-		// (`false` prevents all access, which ensures that nothing bad happens to our rabbits)
-		// '*': false,
+  // Apply the `false` policy as the default for all of RabbitController's actions
+  // (`false` prevents all access, which ensures that nothing bad happens to our rabbits)
+  // '*': false,
 
-		// For the action `nurture`, apply the 'isRabbitMother' policy
-		// (this overrides `false` above)
-		// nurture	: 'isRabbitMother',
+  // For the action `nurture`, apply the 'isRabbitMother' policy
+  // (this overrides `false` above)
+  // nurture	: 'isRabbitMother',
 
-		// Apply the `isNiceToAnimals` AND `hasRabbitFood` policies
-		// before letting any users feed our rabbits
-		// feed : ['isNiceToAnimals', 'hasRabbitFood']
-	// }
+  // Apply the `isNiceToAnimals` AND `hasRabbitFood` policies
+  // before letting any users feed our rabbits
+  // feed : ['isNiceToAnimals', 'hasRabbitFood']
+  // }
 };
