@@ -32,7 +32,7 @@ module.exports = {
       columnName: 'place_id',
       required: true
     },
-    userChecker: {
+    user_checker: {
       type: 'integer',
       columnName: 'user_checker_id',
       required: true
@@ -42,31 +42,26 @@ module.exports = {
       columnName: 'periodicity_id',
       required: true
     },
-    startsAt: {
+    starts_at: {
       type: 'datetime',
-      columnName: 'starts_at',
       required: true
     },
-    endsAt: {
+    ends_at: {
       type: 'datetime',
-      columnName: 'ends_at'
     },
     repeatsEvery: {
       type: 'integer',
-      columnName: 'repeats_every',
       required: true
     },
-    createdAt: {
+    created_at: {
       type: 'datetime',
-      columnName: 'created_at',
       required: true
     },
-    updatedAt: {
+    updated_at: {
       type: 'datetime',
-      columnName: 'updated_at',
       required: true
     },
-    updatedByUserId: {
+    updated_by_user: {
       type: 'integer',
       columnName: 'updated_by_user_id',
       required: true

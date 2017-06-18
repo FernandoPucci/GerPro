@@ -21,9 +21,8 @@ module.exports = {
       primaryKey: true
     },
 
-    tableName: {
+    table_name: {
       type: 'string',
-      columnName: 'table_name',
       required: true
     },
     operation: {
@@ -31,21 +30,18 @@ module.exports = {
       columnName: 'operation',
       required: true
     },
-    primaryKey: {
+    primary_key: {
       type: 'string',
-      columnName: 'primary_key',
       required: true
     },
     old_values: {
       type: 'string',
-      columnName: 'old_values'
     },
-    createdAt: {
+    created_at: {
       type: 'datetime',
-      columnName: 'created_at',
       required: true
     },
-    updatedByUser: {
+    updated_by_user: {
       type: 'integer',
       columnName: 'updated_by_user_id'
     }
