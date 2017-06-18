@@ -39,6 +39,7 @@ module.exports.policies = {
     'create': true,
     'findOne': true,
     'find': true,
+    'update':true, //PUT
     '*': false
   },
   //Enable Rest operations fom MessageController
@@ -53,6 +54,7 @@ module.exports.policies = {
     'create': true,
     'findOne': true,
     'find': true,
+    'update':true, //PUT
     '*': false
   },
 
@@ -66,6 +68,7 @@ module.exports.policies = {
     'create': true,
     'findOne': true,
     'find': true,
+    'update':true, //PUT
     '*': false
   },
   // '*': true,
