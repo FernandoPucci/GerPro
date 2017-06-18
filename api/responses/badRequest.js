@@ -27,16 +27,18 @@ module.exports = function badRequest(data, options) {
 
   // Log error to console
   if (data !== undefined) {
-    sails.log.verbose('Sending 400 ("Bad Request") response: \n',data);
+    sails.log.verbose('Sending 400 ("Bad Request") response: \n', data);
   }
   else sails.log.verbose('Sending 400 ("Bad Request") response');
+
+  //###DISABLED TO BAD REQUEST
 
   // Only include errors in response if application environment
   // is not set to 'production'.  In production, we shouldn't
   // send back any identifying information about errors.
-  if (sails.config.environment === 'production' && sails.config.keepResponseErrors !== true) {
-    data = undefined;
-  }
+  // if (sails.config.environment === 'production' && sails.config.keepResponseErrors !== true) {
+  //   data = undefined;
+  // }
 
   // If the user-agent wants JSON, always respond with JSON
   // If views are disabled, revert to json
@@ -52,9 +54,9 @@ module.exports = function badRequest(data, options) {
   var viewData = data;
   if (!(viewData instanceof Error) && 'object' == typeof viewData) {
     try {
-      viewData = require('util').inspect(data, {depth: null});
+      viewData = require('util').inspect(data, { depth: null });
     }
-    catch(e) {
+    catch (e) {
       viewData = undefined;
     }
   }
@@ -68,7 +70,7 @@ module.exports = function badRequest(data, options) {
 
   // If no second argument provided, try to serve the implied view,
   // but fall back to sending JSON(P) if no view can be inferred.
-  else return res.guessView({ data: viewData, title: 'Bad Request' }, function couldNotGuessView () {
+  else return res.guessView({ data: viewData, title: 'Bad Request' }, function couldNotGuessView() {
     return res.jsonx(data);
   });
 
