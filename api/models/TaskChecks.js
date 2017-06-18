@@ -54,12 +54,10 @@ module.exports = {
       required: true
     },
     created_at: {
-      type: 'datetime',
-      required: true
+      type: 'datetime'
     },
     updated_at: {
-      type: 'datetime',
-      required: true
+      type: 'datetime'
     },
     updated_by_user: {
       type: 'integer',

@@ -38,12 +38,12 @@ module.exports = {
       type: 'string',
     },
     created_at: {
-      type: 'datetime',
-      required: true
+      type: 'datetime'
     },
     updated_by_user: {
       type: 'integer',
-      columnName: 'updated_by_user_id'
+      columnName: 'updated_by_user_id',
+      required: true
     }
   }
 };
