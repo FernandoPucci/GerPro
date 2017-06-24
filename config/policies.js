@@ -74,6 +74,7 @@ module.exports.policies = {
 
   //////////////////ONLY FOR TESTS PURPOSES//////////////////
   TaskChecksController: {
+    'createTask':true,
     'create': true,
     'findOne': true,
     'find': true,
