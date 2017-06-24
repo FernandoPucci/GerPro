@@ -70,7 +70,6 @@ module.exports = {
       type: 'boolean',
       columnName: 'active',
       required: true
-    // }
      },
 
     //one-to-many
@@ -89,8 +88,6 @@ module.exports = {
       collection: 'WeeksDays',
       via: 'task_check_id',
       unique: true
-     // collection: 'WeeksDays',
-     // via: 'id'
     }
   }
 };

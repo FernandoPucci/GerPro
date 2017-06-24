@@ -66,13 +66,6 @@ module.exports = {
       columnName: 'updated_by_user_id',
       required: true
       }
-    // },
-    // tasks: {
-
-    //   model: 'TaskChecks',
-    //   unique: true
-    //   // model: 'TaskChecks'
-    // }
   }
 };
 
