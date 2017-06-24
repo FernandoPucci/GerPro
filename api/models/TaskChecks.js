@@ -8,6 +8,7 @@
 module.exports = {
   //connection: 'db_server',
   // //configurations to disale UpdateAt and CreatedAt Waterline Columns
+  tableName: 'task_checks',
   autoCreatedAt: false,
   autoUpdatedAt: false,
   
@@ -51,6 +52,7 @@ module.exports = {
     },
     repeatsEvery: {
       type: 'integer',
+      columnName: 'repeats_every',
       required: true
     },
     created_at: {
@@ -68,9 +70,28 @@ module.exports = {
       type: 'boolean',
       columnName: 'active',
       required: true
+    // }
+     },
+
+    //one-to-many
+    days_times: {
+      collection: 'DaysTimes',
+      via: 'task_check_id'
+    },
+    // //one-to-many
+    notifications: {
+      collection: 'Notifications',
+      via: 'task_check_id'
+    },
+
+    //one-to-one
+    weeks_days: {
+      collection: 'WeeksDays',
+      via: 'task_check_id',
+      unique: true
+     // collection: 'WeeksDays',
+     // via: 'id'
     }
-
-
   }
 };
 

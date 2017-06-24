@@ -39,7 +39,7 @@ module.exports.policies = {
     'create': true,
     'findOne': true,
     'find': true,
-    'update':true, //PUT
+    'update': true, //PUT
     '*': false
   },
   //Enable Rest operations fom MessageController
@@ -54,7 +54,7 @@ module.exports.policies = {
     'create': true,
     'findOne': true,
     'find': true,
-    'update':true, //PUT
+    'update': true, //PUT
     '*': false
   },
 
@@ -68,9 +68,41 @@ module.exports.policies = {
     'create': true,
     'findOne': true,
     'find': true,
-    'update':true, //PUT
+    'update': true, //PUT
     '*': false
   },
+
+  //////////////////ONLY FOR TESTS PURPOSES//////////////////
+  TaskChecksController: {
+    'create': true,
+    'findOne': true,
+    'find': true,
+    'update': true, //PUT
+    'populate': true,
+    '*': false
+  },
+  DaysTimesController: {
+    // 'create': true,
+    // 'findOne': true,
+    // 'find': true,
+    // 'update': true, //PUT
+    '*': false
+  },
+  NotificationsController: {
+    'create': true,
+    'findOne': true,
+    'find': true,
+    'update': true, //PUT
+    '*': false
+  },
+  WeeksDaysController: {
+    // 'create': true,
+    // 'findOne': true,
+    // 'find': true,
+    // 'update': true, //PUT
+    '*': false
+  },
+  //////////////////////////////////////////////////////////
   // '*': true,
 
   /***************************************************************************

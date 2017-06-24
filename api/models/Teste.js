@@ -10,7 +10,7 @@ module.exports = {
 //connection: 'db_server',
 
   attributes: {
-
+    tableName: 'teste',
     id: {
       type: 'integer',
       autoIncrement: true,

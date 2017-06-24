@@ -8,6 +8,7 @@
 module.exports = {
   //connection: 'db_server',
   //configurations to disale UpdateAt and CreatedAt Waterline Columns
+  tableName: 'places',
   autoCreatedAt: false,
   autoUpdatedAt: false,
   attributes: {

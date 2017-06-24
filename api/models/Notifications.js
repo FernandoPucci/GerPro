@@ -1,16 +1,15 @@
 /**
- * Auditions.js
+ * Notifications.js
  *
- * @description :: Representative model from Auditions table
+ * @description :: Representative model from Notifications table
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
- * 
- * 
  */
 
 module.exports = {
+
   //connection: 'db_server',
   //configurations to disale UpdateAt and CreatedAt Waterline Columns
-  tableName: 'auditions',
+  tableName: 'notifications',
   autoCreatedAt: false,
   autoUpdatedAt: false,
   attributes: {
@@ -22,23 +21,35 @@ module.exports = {
       primaryKey: true
     },
 
-    table_name: {
-      type: 'string',
+    task_check_id: {
+      type: 'integer',
+      model: 'TaskChecks',
       required: true
     },
-    operation: {
-      type: 'string',
-      columnName: 'operation',
+    notification_type_id: {
+      type: 'integer',
       required: true
     },
-    primary_key: {
-      type: 'string',
-      required: true
+    pre_notify_days: {
+      type: 'integer',
+      defaultsTo: '0'
     },
-    old_values: {
-      type: 'string',
+    pre_notify_hours: {
+      type: 'integer',
+      defaultsTo: '0'
+    },
+    pre_notify_minutes: {
+      type: 'integer',
+      defaultsTo: '10'
+    },
+    notify_again_every: {
+      type: 'integer',
+      defaultsTo: '0'
     },
     created_at: {
+      type: 'datetime'
+    },
+    updated_at: {
       type: 'datetime'
     },
     updated_by_user: {

@@ -1,16 +1,15 @@
 /**
- * Auditions.js
+ * DaysTimes.js
  *
- * @description :: Representative model from Auditions table
+ * @description :: Representative model from DaysTimes table
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
- * 
- * 
  */
 
 module.exports = {
+
   //connection: 'db_server',
   //configurations to disale UpdateAt and CreatedAt Waterline Columns
-  tableName: 'auditions',
+  tableName: 'days_times',
   autoCreatedAt: false,
   autoUpdatedAt: false,
   attributes: {
@@ -21,24 +20,24 @@ module.exports = {
       unique: true,
       primaryKey: true
     },
-
-    table_name: {
-      type: 'string',
+    task_check_id: {
+      type: 'integer',
+      required: true,
+      model: 'TaskChecks',
+      unique: true
+    },
+    hour: {
+      type: 'numeric',
       required: true
     },
-    operation: {
-      type: 'string',
-      columnName: 'operation',
+    minute: {
+      type: 'numeric',
       required: true
-    },
-    primary_key: {
-      type: 'string',
-      required: true
-    },
-    old_values: {
-      type: 'string',
     },
     created_at: {
+      type: 'datetime'
+    },
+    updated_at: {
       type: 'datetime'
     },
     updated_by_user: {
@@ -46,6 +45,11 @@ module.exports = {
       columnName: 'updated_by_user_id',
       required: true
     }
+    // },
+
+    // taskchecks: {     
+    //   model: 'task_checks'
+    // }
   }
 };
 
