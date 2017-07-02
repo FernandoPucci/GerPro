@@ -7,7 +7,7 @@ var logFunction = function log() {
 
 var messageTestFunction = function (req, res) {
 
-    MessageServices.mailGunMessageService("fsilvapucci@gmail.com",
+    MessageServices.sendMailGun("fsilvapucci@gmail.com",
         "Cron Message = " + new Date().toLocaleString(),
         "This is an automatically Cron Message = " + new Date().toLocaleString(),
         res);
