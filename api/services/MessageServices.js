@@ -10,8 +10,8 @@ var bodyParser = require("body-parser");
 //#########     MAILGUN    ###############
 //########################################
 
-var api_key = 'key-8b0b023f19ab06f278dc2db893097b96';
-var domain = 'sandbox144485e953204a3aae1777988fc008be.mailgun.org';
+var api_key = 'key-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+var domain = 'sandboxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.mailgun.org';
 var mailgun = require('mailgun-js')({ apiKey: api_key, domain: domain });
 
 var _from = 'GERPRO no-reply <mailgun@sandbox144485e953204a3aae1777988fc008be.mailgun.org>';
