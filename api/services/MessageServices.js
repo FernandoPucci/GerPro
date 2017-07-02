@@ -14,7 +14,7 @@ var api_key = 'key-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 var domain = 'sandboxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.mailgun.org';
 var mailgun = require('mailgun-js')({ apiKey: api_key, domain: domain });
 
-var _from = 'GERPRO no-reply <mailgun@sandbox144485e953204a3aae1777988fc008be.mailgun.org>';
+var _from = 'GERPRO no-reply <mailgun@sandboxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.mailgun.org>';
 //########################################
 //########################################
 //########################################
