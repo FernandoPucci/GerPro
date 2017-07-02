@@ -17,7 +17,7 @@ module.exports = {
     //use TestService
     sendMessage: function (req, res) {
 
-        var testMsg = MessageServices.sendMessage(req.body.to,
+        var testMsg = MessageServices.sendMailGun(req.body.to,
             req.body.subject,
             req.body.message,
             res);
