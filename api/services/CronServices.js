@@ -39,7 +39,7 @@ var task = null;
  Every second divisible by 10 (ended with 0)
  "* /10 * * * * *"
  */
-var cronExpression = '0 */5 * * * *';//5 minutes
+var cronExpression = '0 */5 * * * *';//5 minutes refreshing
 
 var CronServices = {
 
