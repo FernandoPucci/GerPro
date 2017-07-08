@@ -9,9 +9,10 @@ var messageTestFunction = function (req, res) {
 
     MessageServices.sendMailGun("fsilvapucci@gmail.com",
         "Cron Message = " + new Date().toLocaleString(),
-        "This is an automatically Cron Message = " + new Date().toLocaleString(),
+        "This is an automatic Cron Message = " + new Date().toLocaleString(),
         res);
 };
+
 
 var lastExecution = "N/A";
 
@@ -49,6 +50,10 @@ var CronServices = {
         try {
             task = cron.schedule(cronExpression, function () {
                 console.log(logFunction());
+
+                //CALLING KEEP-ALIVE REQUEST
+                KeepAliveServices.keep_alive();
+
                 messageTestFunction();
                 lastExecution = new Date().toLocaleString();
 
