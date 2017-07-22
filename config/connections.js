@@ -53,10 +53,10 @@ module.exports.connections = {
   //HEROKU-DEV
   dbServerPRD: {
     adapter: 'sails-postgresql',
-    host: 'ec2-107-22-244-62.compute-1.amazonaws.com',
-    user: 'wqwrwuxntjqurt', // optional
-    password: '9d3ad37d4b9d637486ae0dce57337db0f70c1958fb42efe90bd7644aa64444a8', // optional
-    database: 'd1lb02nc0pgvjn', //optional
+    host: process.env.DB_HOST_PRD,
+    user: process.env.DB_USER_PRD, // optional
+    password: process.env.DB_PASSWORD_PRD, // optional
+    database: process.env.DB_DATABASE_PRD, //optional
     ssl      : true
   }
 
