@@ -109,7 +109,8 @@ var CronServices = {
                 "\nLast Execution at: " + lastExecution);
         } else {
             sails.log("HEALTHCHECK:\nThere's NOT any TASK running!");
-            return ("HEALTHCHECK:\nThere's NOT any TASK running!");
+            return ("HEALTHCHECK:\nThere's NOT any TASK running!" + "\n"
+                + sails.config.environment_config.teste);
         }
     }
 };

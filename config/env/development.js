@@ -18,8 +18,8 @@ module.exports = {
    ***************************************************************************/
 
   models: {
-    connection: 'dbServerPRD'
-    //connection: 'dbServerDEV'
+   // connection: 'dbServerPRD'
+   connection: 'dbServerDEV'
   },
   log: {
     level: "debug"
