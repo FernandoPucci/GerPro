@@ -5,6 +5,7 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
+var bodyParser = require("body-parser");
 
 
 module.exports = {
@@ -20,6 +21,17 @@ module.exports = {
         var testMsg = TestServices.testFunction();
 
         res.send('Return: ' + testMsg);
+
+    },
+    execute: function (req, res) {
+
+        var ret = ExecutionQueueServices.execute(res);
+
+        return res.send(ret);
+    },
+    version: function(req, res){
+
+         TestServices.version(req,res);
 
     }
 };
