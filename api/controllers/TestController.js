@@ -10,28 +10,32 @@ var bodyParser = require("body-parser");
 
 module.exports = {
 
-    //delete unavailable
-    destroy: function (req, res) {
-        return res.json(403, 'You don\'t have permission to DELETE');
-    },
+  //delete unavailable
+  destroy: function (req, res) {
+    return res.json(403, 'You don\'t have permission to DELETE');
+  },
 
-    //use TestService
-    testCall: function (req, res) {
+  //use TestService
+  testCall: function (req, res) {
 
-        var testMsg = TestServices.testFunction();
+    var testMsg = TestServices.testFunction();
 
-        res.send('Return: ' + testMsg);
+    res.send('Return: ' + testMsg);
 
-    },
-    execute: function (req, res) {
+  },
+  execute: function (req, res) {
 
-        ExecutionQueueServices.execute(req, res);
-        
-    },
-    version: function(req, res){
+    ExecutionQueueServices.execute(req, res);
 
-         TestServices.version(req,res);
+  },
+  next: function (req, res) {
 
-    }
+    ExecutionQueueServices.next(req, res);
+
+  },
+  version: function (req, res) {
+
+    TestServices.version(req, res);
+
+  }
 };
-

@@ -2,35 +2,50 @@ var bodyParser = require("body-parser");
 
 var ExecutionQueueServices = {
 
+  next: function nextQueueService(req, res) {
+    ExecutionQueue.query("SELECT INSERT_INTO_EXECUTION_QUEUE()", function (err, result) {
+
+      if (err) {
+        //TODO: log error
+        sails.log.error("[nextQueueService] " + err);
+        return res.serverError(err);
+      }
+
+      return res.ok(result.rows);
+
+    });
+
+  },
   execute: function executeQueueService(req, res) {
 
-    //#### DEBUG
-    // console.log(json.body.description);
-    // console.log(json.body.notifications);
-    // console.log("\n\n*************************************\n\n")
-    // console.log(json.body);
-
-    TaskChecks.query("SELECT EXECUTION_QUEUE_TO_JSON()", function (err, result) {
-      if (err)
+    ExecutionQueue.query("SELECT EXECUTION_QUEUE_TO_JSON()", function (err, result) {
+      if (err) {
+        //TODO: log error
+        sails.log.error("[executeQueueService] " + err);
         return res.serverError(err);
+      }
 
       var data = result.rows[0].execution_queue_to_json;
 
-      //scan array of tasks enqueued
-      for (let i = 0; i < data.length; i++) {
+      if (data) {
+        //scan array of tasks enqueued
+        for (let i = 0; i < data.length; i++) {
 
-        try {
-        //  callEmailMessage(data[i]);
-          updateQueueService(data[i].id);
-        } catch (e) {
-          //TODO: log problem
-          sails.log.error(e.message);
-          continue;
+          try {
+            callEmailMessage(data[i]); //TODO: call message method based in notification type id
+            updateQueueService(data[i].id); //TODO: use promise 'then'
+          } catch (e) {
+            //TODO: log error
+            sails.log.error("[executeQueueService] " + err);
+            continue;
+          }
         }
+
+        return res.ok(data);
 
       }
 
-      return res.ok(data);
+      return res.ok([]);
 
     });
   }
@@ -40,21 +55,9 @@ module.exports = ExecutionQueueServices;
 
 //Private Functions
 function callEmailMessage(data) {
-  /*
-      { id: 6,
-          task_check_id: 18,
-          next_execution: '2017-08-12T10:05:00',
-          task_check_name: 'testes Funções DEV 2',
-          task_check_description: 'Testes Funções Diário',
-          place_name: 'Banheiro Feminino',
-          name: 'Fernando Silva',
-          email: 'fsilvapucci@gmail.com',
-          mobile_message: '+553599915534',
-          notifications: [ { notification_type_id: 19, notifications_type_name: 'e-mail' } ] }
-  */
 
   var bodyMessage = data.name + "\n" +
-    data.task_check_name + "\n" +
+    data.task_check_name + " [" + data.next_execution.toLocaleString() + "] \n" +
     data.place_name + "\n" +
     data.task_check_description + "\n";
 
@@ -65,20 +68,22 @@ function callEmailMessage(data) {
 
   console.log(data);
 
-};
+}
 
-function updateQueueService(id) {
-  /*
-  UPDATE EXECUTION_QUEUE
-  SET EXECUTED = TRUE
-  WHERE TASK_CHECK_ID=13;
-  */
-  TaskChecks.query("UPDATE EXECUTION_QUEUE SET EXECUTED = TRUE WHERE TASK_CHECK_ID = " + id, function (err, result) {
-        
-        if (err)
-          throw new Exception(err);
-        console.log(">>>>>>>>> " + id + "\n Updated");
-        
-      });
+function updateQueueService(idQueue) {
+
+  ExecutionQueue.update({
+    id: idQueue
+  }, {
+    executed: true
+  }).exec(function afterwards(err, updated) {
+
+    if (err) {
+      throw new Exception(err);
     }
-    
+
+    console.log('Updated ' + updated.length + ' rows.');
+    return;
+  });
+
+}

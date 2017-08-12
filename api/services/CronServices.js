@@ -40,6 +40,7 @@ var task = null;
  "* /10 * * * * *"
  */
 var cronExpression = '0 */5 * * * *';//5 minutes refreshing
+//var cronExpression = '*/5 * * * * *';//5 seconds refreshing
 
 var CronServices = {
 
@@ -54,7 +55,13 @@ var CronServices = {
                 //CALLING KEEP-ALIVE REQUEST
                 KeepAliveServices.keep_alive();
 
-                messageTestFunction();
+                //messageTestFunction();
+
+                //CALLING FUNCTION TO ENQUEUE NEXT TASKS
+                KeepAliveServices.nextQueue(); 
+
+                //CALLING FUNCTION TO EXECUTE QUEUED TASKS
+                KeepAliveServices.executeQueue();
                 lastExecution = new Date().toLocaleString();
 
             });
