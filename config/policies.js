@@ -103,6 +103,12 @@ module.exports.policies = {
     // 'update': true, //PUT
     '*': false
   },
+  ExecutionQueueController: {    
+    'findOne': true,
+    'find': true,
+    //'update': true, //PUT
+    '*': false
+  },
   //////////////////////////////////////////////////////////
   // '*': true,
 
