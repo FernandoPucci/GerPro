@@ -25,9 +25,9 @@ module.exports = {
     },
     execute: function (req, res) {
 
-        var ret = ExecutionQueueServices.execute(res);
-
-        return res.send(ret);
+        ExecutionQueueServices.execute(req, res);
+        console.log(res);
+        
     },
     version: function(req, res){
 
