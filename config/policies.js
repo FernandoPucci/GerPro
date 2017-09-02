@@ -39,6 +39,8 @@ module.exports.policies = {
     'create': true,
     'findOne': true,
     'find': true,
+    'places': true,
+    'users': true,
     'update': true, //PUT
     '*': false
   },
@@ -107,6 +109,12 @@ module.exports.policies = {
     'findOne': true,
     'find': true,
     //'update': true, //PUT
+    '*': false
+  },
+  ParametersController: {
+    'categories': true,
+    'findOne': true,
+    'find': true,
     '*': false
   },
   //////////////////////////////////////////////////////////
