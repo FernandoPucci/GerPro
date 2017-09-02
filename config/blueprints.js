@@ -157,6 +157,6 @@ module.exports.blueprints = {
   *                                                                           *
   ****************************************************************************/
 
-  // defaultLimit: 30
+   defaultLimit: 99999999///Number.MAX_VALUE // Set to highest possible value
 
 };

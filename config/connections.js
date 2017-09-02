@@ -42,12 +42,19 @@ module.exports.connections = {
   *                                                                          *
   ***************************************************************************/
   //DEV
+  // dbServerDEV: {
+  //   adapter: 'sails-postgresql',
+  //   host: 'win_server',
+  //   user: 'postgres', // optional
+  //   password: '123456', // optional
+  //   database: 'GERPRO_DEV' //optional
+  // },
   dbServerDEV: {
     adapter: 'sails-postgresql',
-    host: 'win_server',
+    host: 'localhost',
     user: 'postgres', // optional
     password: '123456', // optional
-    database: 'GERPRO_DEV' //optional
+    database: 'gerpro_dev' //optional
   },
 
   //HEROKU-DEV
