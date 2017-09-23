@@ -28,8 +28,7 @@ module.exports = {
       required: true
     },
     description: {
-      type: 'text',
-      required: true
+      type: 'text'
     },
     created_at: {
       type: 'datetime'
