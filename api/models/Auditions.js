@@ -29,6 +29,7 @@ module.exports = {
     operation: {
       type: 'string',
       columnName: 'operation',
+      required: true,
       required: true
     },
     primary_key: {
@@ -43,8 +44,7 @@ module.exports = {
     },
     updated_by_user: {
       type: 'integer',
-      columnName: 'updated_by_user_id',
-      required: true
+      columnName: 'updated_by_user_id'
     }
   }
 };

@@ -35,8 +35,7 @@ module.exports = {
     },
     updated_by_user: {
       type: 'integer',
-      columnName: 'updated_by_user_id',
-      required: true
+      columnName: 'updated_by_user_id'
     }
   }
 };
