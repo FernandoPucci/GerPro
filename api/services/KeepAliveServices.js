@@ -1,11 +1,11 @@
 //https://stackoverflow.com/questions/37958383/call-rest-api-in-sails-js
 //PROD
-var hostURI = "gerpro-api.herokuapp.com";
-var portURI = "";
+//var hostURI = "gerpro-api.herokuapp.com";
+//var portURI = "";
 
 //DEV
-//var hostURI = "localhost";
-//var portURI = 1337;
+var hostURI = "localhost";
+var portURI = 1337;
 
 var healthCheckURI = "/api/main/healthcheck";
 var executionQueueURI = "/api/test/execute";
@@ -25,7 +25,7 @@ var KeepAliveServices = {
     var options = {
       hostname: hostURI,
       path: healthCheckURI,
-    //  port: portURI,
+      port: portURI,
       method: 'GET'
     };
 
@@ -46,7 +46,7 @@ var KeepAliveServices = {
     var options = {
       hostname: hostURI,
       path: executionQueueURI,
-    //  port: portURI,
+      port: portURI,
       method: 'GET'
     };
 
@@ -67,7 +67,7 @@ var KeepAliveServices = {
     var options = {
       hostname: hostURI,
       path: nextQueueURI,
-    //  port: portURI,
+      port: portURI,
       method: 'GET'
     };
 
