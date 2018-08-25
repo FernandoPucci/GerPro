@@ -88,6 +88,12 @@ module.exports = {
       collection: 'WeeksDays',
       via: 'task_check_id',
       unique: true
+    },
+
+    //one-to-many
+    taskCheckResults: {
+      collection: 'TaskCheckResults',
+      via: 'task_check_id'
     }
   }
 };

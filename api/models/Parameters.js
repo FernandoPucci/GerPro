@@ -46,6 +46,11 @@ module.exports = {
       type: 'integer',
       columnName: 'updated_by_user_id',
       required: true
+    },
+    
+    taskCheckResults: {
+      collection: 'taskCheckResults',
+      via: 'result_id'
     }
   }  
 };
